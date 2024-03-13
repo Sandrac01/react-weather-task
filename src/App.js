@@ -1,38 +1,16 @@
 import React from "react";
+import WeatherSearch from "./WeatherSearch";
 import './Search.css';
 
 function App() {
   return (
     <div className="weather-app">
       <header>
-        <form class="search-form" id="search-form">
-          <input
-            type="search"
-            placeholder="Enter a city.."
-            required
-            id="search-form-input"
-            class="search-form-input"
-          />
-          <input type="submit" value="Search" class="search-form-button" />
-        </form>
       </header>
+  <WeatherSearch />
       <main>
-        <div class="weather-app-data">
-          <div>
-            <div class="weather-app-city" id="city"></div>
-            <p class="weather-app-details">
-              <span id="time"></span>,<span id="description"></span>
-              <br />
-              Humidity: <strong id="humidity"></strong>, Wind:
-              <strong id="wind-speed"></strong>
-            </p>
-          </div>
-          <div class="weather-app-temperature-container">
-            <div id="icon"></div>
-            <div class="weather-app-temperature" id="temperature"></div>
-            <div class="weather-app-unit">°C</div>
-          </div>
-        </div>
+        <div class="weather-app-data" />
+          
         <div class="weather-forecast" id="forecast"></div>
       </main>
 
@@ -47,7 +25,7 @@ function App() {
         </a>
         , is
         <a
-          href="https://github.com/Sandrac01/"
+          href="https://github.com/Sandrac01/react-weather-task"
           target="_blank"
           rel="noreferrer"
         >
@@ -55,13 +33,14 @@ function App() {
         </a>
         and
         <a
-          href="https://github.com/Sandrac01/"
+          href="https://wonderful-cactus-c0504d.netlify.app/"
           target="_blank"
           rel="noreferrer"
         >
           hosted on Netlify
         </a>
       </footer>
+     
     </div>
   );
 }
