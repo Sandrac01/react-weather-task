@@ -5,7 +5,8 @@ import './Search.css';
 function App() {
   return (
     <div className="weather-app">
-      <header>
+      <header className="header">
+        Weather Application
       </header>
   <WeatherSearch />
       <main>

@@ -7,13 +7,9 @@ export default function WeatherSearch(response) {
    const [weather, setWeather] = useState({});
 
 
-
-
- 
 function updateCity(event) {
   setCity(event.target.value);
 }
-
   
 function showWeather(response) {
   setWeather({
@@ -32,7 +28,7 @@ function handleSubmit(event) {
 let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
-   setCity (`${city}`);
+  setCity (`${city}`);
  setMessage(`Tuesday 10:20`);
  
  

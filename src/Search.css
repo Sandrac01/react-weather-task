@@ -19,6 +19,9 @@ a {
 header {
   border-bottom: 1px solid #f9f7fe;
   padding: 0 0 30px 0;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .search-form-input {
