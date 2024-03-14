@@ -5,26 +5,20 @@ export default function WeatherSearch(response) {
     const [city, setCity] = useState("");
    const [message, setMessage] = useState("");
    const [weather, setWeather] = useState({});
-const [temperature, setTemperature] = useState();
-const [date, setDate] = useState();
 
-function showDate(){
-  setDate(response.data.date);
-}
+
+
+
  
 function updateCity(event) {
   setCity(event.target.value);
 }
 
-function showTemperature(response) {
-  setTemperature(response.data.main.temp);
-}
-
-
+  
 function showWeather(response) {
   setWeather({
-    temperature: response.data.main.temp,
-    wind: response.data.wind.speed,
+  temperature: response.data.main.temp,  
+wind: response.data.wind.speed,
     humidity: response.data.main.humidity,
     icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     description: response.data.weather[0].description,
@@ -37,11 +31,10 @@ function handleSubmit(event) {
   event.preventDefault();
 let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-   axios.get(apiUrl).then(showTemperature);
-   axios.get(apiUrl).then(showWeather);
-   axios.get(apiUrl).then(showDate);
-   setMessage (`${city}`);
- setDate(`Tuesday`) (`10:20`);
+  axios.get(apiUrl).then(showWeather);
+   setCity (`${city}`);
+ setMessage(`Tuesday 10:20`);
+ 
  
 }
 
@@ -59,11 +52,8 @@ let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
           />
           <input type="submit" value="Search" class="search-form-button" />
         </form>
-        <h2>{message}</h2>
-        <h3>
-          <span className="day">Tuesday </span>
-          <span className="time"> 10:20</span>
-        </h3>
+        <h2>{city}</h2>
+        <h3>{message}</h3>
         <h4>{weather.description}</h4>
         <span id="description"></span>
         <div className="details d-flex">
@@ -71,7 +61,9 @@ let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
             <span>
               <img src={weather.icon} alt={weather.description} />
             </span>
-            <span> {Math.round(weather.temperature)}°C</span>
+            <span className="temperature">
+             {Math.round(weather.temperature)} °C
+            </span>
           </div>
           <div className="humidity-wind">
             <span id="humidity"> Humidity:{weather.humidity}%</span>
